@@ -1,4 +1,4 @@
-const MAX_HP = 1000;
+const MAX_HP = 10000;
 
 let selectedTool = "baseball"
 selectTool(selectedTool);
@@ -24,19 +24,16 @@ function selectTool(tool){
 
 
 function hitMonster() { 
-    console.log('hitted by', selectedTool);
+    console.log('hitted by', selectedTool, 'hp before: ', monster.hp);
 
-
-    if(selectedTool === 'baseball'){
-        monster.hit(100)
-    }else if(selectedTool === 'fist'){
-        monster.hit(50)
-    }else{
-        monster.hit(200)
+    switch(selectedTool){
+        case 'baseball': monster.hit(100); break;
+        case 'fist': monster.hit(50); break;
+        case 'stone': monster.hit(200); break;
+        default: return;
     }
-
-    
-    htStatus = monster.hp > 0? monster.hp * 0.1 : 0
+    console.log('monster hp after hit', monster.hp);
+    const hpStatus = monster.hp/MAX_HP * 100
     // end
     updateView(hpStatus)
 }
