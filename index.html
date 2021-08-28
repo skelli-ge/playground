@@ -1,0 +1,71 @@
+<html>
+    <head>
+       
+        <style>
+            .monster{
+                position: relative;
+                margin: 0 auto;
+                width: 500px;
+            }
+            .monster .overlay{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: calc(100% - 25px);
+                background-color: rgba(255, 0, 0, 0.3);
+                display: none;
+            }
+     
+            .points{
+                height: 25px;
+                background: green;
+            }
+            .monster img{
+                width: 100%;
+            }
+            .tools {
+                cursor: pointer;
+                display: flex;
+                flex-flow: row;
+                flex-wrap: nowrap;
+                justify-content: space-around;
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+            }
+
+
+            /* classes can be selected */
+            .show {
+                display: block!important;
+            }
+            .baseball {
+                cursor: url(rsz_baseball-bat.png), auto;
+            }
+            .fist {
+                cursor: url(rsz_fist.png), auto;
+            }
+            .stone {
+                cursor: url(rsz_stone.png), auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="monster">
+            <img src="Giant_Monster.png" alt="" onclick="hitMonster()">
+            <div class="overlay"></div>
+            <div class="hp">
+                <div class="points"></div>
+            </div>
+        </div>
+        
+    
+    <div class="tools">
+        <img class="tool" onclick="selectTool('baseball')" src="rsz_baseball-bat.png" alt="" srcset="">
+        <img class="tool" onclick="selectTool('fist')" src="rsz_fist.png" alt="" srcset="">
+        <img class="tool" onclick="selectTool('stone')" src="rsz_stone.png" alt="" srcset="">
+    </div>
+    <script src="script.js"></script>
+    </body>    
+</html>
